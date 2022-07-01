@@ -33,7 +33,7 @@
                         <li><a class="linkText" href="#">Quienes Somos</a></li>
                         <li><a class="linkText" href="#">Productores</a></li>
                         <li><a class="linkText" href="#">Eventos</a></li>
-                        <li><a class="linkText" href="#">Puntos de venta</a></li>
+                        <li><a class="linkText" href="{{asset('users')}}">Cuenta</a></li>
                         <li>
                             <!-- search bar right align -->
                             <div class="search">
@@ -71,6 +71,5 @@
         </footer>
     </main>
     <script src="{{asset('vendor/js/hamburguerApp.js')}}"></script>
-    
 </body>
 </html>
