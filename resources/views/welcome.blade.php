@@ -33,7 +33,7 @@
                         <li><a class="linkText" href="#">Quienes Somos</a></li>
                         <li><a class="linkText" href="#">Productores</a></li>
                         <li><a class="linkText" href="#">Eventos</a></li>
-                        <li><a class="linkText" href="{{asset('users')}}">Cuenta</a></li>
+                        <li><a class="linkText" href="{{asset('login')}}">Cuenta</a></li>
                         <li>
                             <!-- search bar right align -->
                             <div class="search">

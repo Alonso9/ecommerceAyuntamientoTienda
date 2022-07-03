@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/* Rutas para el manejo del administrador */
-Route::resource('users', UserController::class);
-Route::get('users/login', [UserController::class, 'index'])->name('index');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
