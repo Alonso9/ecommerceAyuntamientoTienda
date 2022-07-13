@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat, sans-serif;
+}
+
+/* #header */
+
+#nav{
+    /* z-index: 1; */
+    padding: 0 30px;
+    height: 110px;
+    /* box-shadow: 1px 1px 3px rgba(0, 0, 0, .2); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navimgcont{
+    display: flex;
+    flex-direction: row;
+}
+
+#navimgcont img{
+    width: 60px;
+}
+
+#navbtncont{
+    display: flex;
+}
+
+.navbtn{
+    cursor: pointer;
+    border: 2px solid #862628;
+    border-radius: 3px;
+    padding: 4px 6px;
+    font-weight: 600;
+    margin-right: 5px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.navbtn:hover{
+    background-color: #862628;
+    color: #fff;
+}
+
+#nav-search{
+    display: flex;
+    font-size: 23px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* slider */
+
+.slider{
+    /* z-index: -99; */
+    display: flex;
+    max-height: 36vw;
+    width: 100%;
+}
+
+.slider-info{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.slider-info img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 13vw;
+}
+
+.slider-info .slin-txt{
+    display: flex;
+    flex-direction: column;
+    width: 14vw;
+}
+
+.slider-info .slin-txt .slin-title{
+    font-size: 2.2vw;
+    font-weight: bold;
+    color: #862628;
+}
+
+.slider-info .slin-txt .slin-prop{
+    font-size: 1.3vw;
+    font-weight: bold;
+    color: #5b5a5d;
+}
+
+.slider-info .slin-txt .slin-desc{
+    font-size: 1vw;
+    margin-top: 15px;
+    font-weight: 700;
+    color: #862628;
+}
+
+.slider-info .slin-btncomprar{
+    font-size: 1vw;
+    margin-top: 15px;
+    font-weight: 800;
+    color: #862628;
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, .3);
+    padding: 7px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.slider-img{
+    flex: 10;
+    border-radius: 70px 0px 0px 0px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.slin-btnpntventa{
+    position: absolute;
+    font-size: 1.2vw;
+    color: #862628;
+    background-color: #fff;
+    border-radius: 7px;
+    font-weight: 800;
+    padding: 7px;
+    bottom: 2vw;
+    right: 2vw;
+    cursor: pointer;
+}
+
+/* nuevo slider */
+
+#container-slider{
+    /* z-index: -99; */
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+}
+
+.elements{
+    margin-left: -100%;
+    display: flex;
+    width: 400%; /*Depende de la cantidad de sliders*/  
+}
+
+.slider-btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: backgroud-color .3s ease;
+}
+
+.slider-btn:hover{
+    background-color: #fff;
+}
+
+.sliderbtn-l{
+    left: 10px;
+
+}
+
+.sliderbtn-r{
+    right: 10px;
+    
+}
