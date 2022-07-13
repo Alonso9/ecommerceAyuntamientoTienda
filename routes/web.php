@@ -44,5 +44,6 @@ Route::group(['Middleware' => 'auth'], function() {
     Route::get('vendedor/editar/{id}', [VendedorController::class, 'edit'])->name('vendedor.edit');
     Route::get('vendedor/actualizar/{id}', [VendedorController::class, 'actualizar'])->name('vendedor.actualizar');
     Route::get('vendedor/eleminar/{id}', [VendedorController::class, 'destroy'])->name('vendedor.destroy');
+    Route::get('vendedor/detalles/{id}', [VendedorController::class, 'details'])->name('vendedor.details');
 });
 require __DIR__.'/auth.php';

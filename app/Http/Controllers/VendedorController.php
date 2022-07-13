@@ -122,4 +122,8 @@ class VendedorController extends Controller
         return redirect()->route('vendedores.index');
 
     }
+    public function details($id){
+        $vendedor = Vendedor::findOrFail($id);
+        return view('vendedores.viewDetails', compact('vendedor'));
+    }
 }

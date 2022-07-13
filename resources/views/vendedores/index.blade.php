@@ -53,11 +53,11 @@
                                       <tr>
                                         <th scope="row">{{$vendedor->id}}</th>
                                         <td>{{$vendedor->nombre}}</td>
-                                        <td><a href="#">Detalles</a></td>
+                                        <td><a href="{{route('vendedor.details', $vendedor->id)}}" class="btn btn-outline-primary">Detalles</a></td>
                                         <td><a href="{{route('vendedor.edit',$vendedor->id)}}" class="btn btn-outline-warning">Editar</a> | 
                                             <!-- Button trigger modal -->
                                             <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modal-delete-{{$vendedor->id}}">
-                                                Eleminar
+                                                Borrar
                                             </button>
                                             {{-- <a href="{{route('vendedor.destroy',$vendedor->id)}}" class="btn btn-outline-danger">Eleminar</a></td> --}}
                                       </tr>
