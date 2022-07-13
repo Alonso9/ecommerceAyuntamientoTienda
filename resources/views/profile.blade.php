@@ -13,6 +13,7 @@
                     <form action="{{route('profile.update')}}" method="post">
                         @method('PUT')
                         @csrf
+                        {{-- @csrf --}}
                         <div class="grid grid-cols-2 gap-6">
                             <div class="grid grid-row-2 gap-6">
                                 {{-- Para llamar un componente se usa x-nombre --}}
