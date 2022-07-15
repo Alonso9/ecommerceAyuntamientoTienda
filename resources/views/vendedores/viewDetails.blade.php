@@ -7,6 +7,7 @@
 
     <div class="card text-center">
         <div class="card-header">
+            <img src="{{ asset('storage/perfil/'.$vendedor->nombre.'/'.$vendedor->foto) }}" alt="" style="height: 50%;">
           Vendedor "{{$vendedor->nombre}}"
         </div>
         <div class="card-body">

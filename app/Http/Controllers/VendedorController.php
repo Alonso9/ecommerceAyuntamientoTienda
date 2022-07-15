@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Vendedor;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+
 class VendedorController extends Controller
 {
     /**
@@ -39,6 +41,7 @@ class VendedorController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         //
         $vendedor = new Vendedor();
         $vendedor->nombre = $request->input('nombre');
@@ -47,7 +50,15 @@ class VendedorController extends Controller
         $vendedor->correo = $request->input('correo');
         $vendedor->facebook = $request->input('facebook');
         $vendedor->descripcion = $request->input('descripcion');
+        $vendedor->foto = $request->file('imagen')->getClientOriginalName();
+
+        $extension = $request->file('imagen')->getClientOriginalExtension();
+
+        $request->file('imagen')->storeAs('/public/perfil/'.$vendedor->nombre, $vendedor->foto);
+        // Storage::disk('local')->put($img);
+
         $vendedor->save();
+
         return redirect()->route('vendedores.index');
     }
 

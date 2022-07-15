@@ -40,7 +40,7 @@ Route::group(['Middleware' => 'auth'], function() {
     Route::post('vendedor/buscar/', [VendedorController::class, 'buscar'])->name('vendedor.buscar');
     Route::get('vendedor', [VendedorController::class, 'index'])->name('vendedores.index');
     Route::get('vendedor/agregar', [VendedorController::class, 'create'])->name('vendedor.create');
-    Route::get('vendedor/insertar', [VendedorController::class, 'store'])->name('vendedor.store');
+    Route::post('vendedor/insertar', [VendedorController::class, 'store'])->name('vendedor.store');
     Route::get('vendedor/editar/{id}', [VendedorController::class, 'edit'])->name('vendedor.edit');
     Route::get('vendedor/actualizar/{id}', [VendedorController::class, 'actualizar'])->name('vendedor.actualizar');
     Route::get('vendedor/eleminar/{id}', [VendedorController::class, 'destroy'])->name('vendedor.destroy');

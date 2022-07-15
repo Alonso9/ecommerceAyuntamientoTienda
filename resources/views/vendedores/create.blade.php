@@ -10,8 +10,9 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h1>Formulario para registro de vendedor</h1><br>
-                    <form action="{{route('vendedor.store')}}" method="POST">
-                        @method('GET')
+                    {{-- ectype es para mandar archivos y cadenas largas --}}
+                    <form action="{{route('vendedor.store')}}" method="POST" enctype="multipart/form-data"> 
+                        {{-- @method('GET') --}}
                         @csrf
                         <div class="grid grid-cols-2 gap-6">
                             <div class="grid grid-row-2 gap-6">
@@ -42,7 +43,11 @@
                                 <div>
                                     <x-label for="email" :value="__('Descripcion')"></x-label>
                                     <x-input class="block mt-1 w-full" type="text" name="descripcion" required></x-input>
-                                </div>                                
+                                </div>
+                                <div>
+                                    <x-label :value="__('Imagen')"></x-label>
+                                    <x-input class="block mt-1 w-full" type="file" name="imagen" ></x-input>
+                                </div>
                             </div>
                         </div>
                         

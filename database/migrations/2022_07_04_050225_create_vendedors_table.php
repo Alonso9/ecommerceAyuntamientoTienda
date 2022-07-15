@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('correo');
             $table->string('facebook');
             $table->text('descripcion');
+            $table->text('foto');
             // $table->timestamps();
         });
     }

@@ -11,7 +11,7 @@ class Vendedor extends Model
     protected $table = 'vendedores';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'nombre', 'whatsapp', 'messanger', 'correo', 'facebook', 'descripcion'
+        'nombre', 'whatsapp', 'messanger', 'correo', 'facebook', 'descripcion','foto'
     ];
 
     public $timestamps = false;
