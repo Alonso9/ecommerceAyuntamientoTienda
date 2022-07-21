@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\producto;
 use Illuminate\Http\Request;
 use App\Models\Vendedor;
 use Illuminate\Support\Facades\DB;
@@ -111,6 +112,7 @@ class VendedorController extends Controller
         //
         $vendedor = Vendedor::findOrFail($id);
         $vendedor->delete();
+        $productos = producto::where('idVendedor', $id)->delete();
         return redirect()->route('vendedores.index');
     }
 

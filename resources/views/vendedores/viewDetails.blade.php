@@ -12,7 +12,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">Descripcion: {{$vendedor->descripcion}}</h5>
-          <p class="card-text">Productos del Vendedor: 1-. Producto</p><br>
+          <p class="card-text">Productos del Vendedor: <a href="{{route('producto.index',$vendedor->id)}}">Ver productos</a> </p><br>
           <x-button class="ml-3">
             <a href="javascript:history.back()">Ir al listado</a>
           </x-button>

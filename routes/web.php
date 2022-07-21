@@ -4,6 +4,7 @@ use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VendedorController;
+use App\Http\Controllers\ProductoController;
 use App\Models\Vendedor;
 
 /*
@@ -45,5 +46,16 @@ Route::group(['Middleware' => 'auth'], function() {
     Route::get('vendedor/actualizar/{id}', [VendedorController::class, 'actualizar'])->name('vendedor.actualizar');
     Route::get('vendedor/eleminar/{id}', [VendedorController::class, 'destroy'])->name('vendedor.destroy');
     Route::get('vendedor/detalles/{id}', [VendedorController::class, 'details'])->name('vendedor.details');
+
+    //Productos
+    Route::get('productos/index/{id}', [ProductoController::class, 'index'])->name('producto.index');
+    Route::post('productos/buscar/', [ProductoController::class, 'buscar'])->name('producto.buscar');
+    Route::get('productos/agregar/{id}', [ProductoController::class, 'create'])->name('producto.create');
+    Route::post('Productos/insertar', [ProductoController::class, 'store'])->name('producto.store');
+    Route::get('productos/editar/{id}', [ProductoController::class, 'edit'])->name('producto.edit');
+    Route::get('productos/actualizar/{id}', [ProductoController::class, 'actualizar'])->name('producto.actualizar');
+    Route::get('producto/eleminar/{id}', [ProductoController::class, 'destroy'])->name('producto.destroy');
+    Route::get('productos/detalles/{id}', [ProductoController::class, 'details'])->name('producto.details');
+
 });
 require __DIR__.'/auth.php';
