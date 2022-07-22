@@ -7,6 +7,9 @@ use App\Models\producto,AppVendedor;
 use App\Models\Vendedor;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+// use File;
+
 class ProductoController extends Controller
 {
     /**
@@ -115,10 +118,18 @@ class ProductoController extends Controller
     {
         //
         $productos2 = producto::findOrFail($id);
-        $productos2->delete();
         $vendedor = Vendedor::findOrFail($productos2->idVendedor);
+        if(Storage::exists('/public/productos/'.$vendedor->nombre, $productos2->imagen)){
+            File::delete(storage_path('app/public/productos/'.$vendedor->nombre.'/'. $productos2->imagen));
+            // Storage::delete('storage/productos/'.$vendedor->nombre, $productos2->imagen);
+        }else{
+            dd("NOOOOOOOOOOO");
+        }
+        
+        $productos2->delete();
 
-        $productos = producto::paginate();
+        $productos = producto::where('idVendedor', $vendedor->id)->paginate();
+        // return dd('/public/productos/'.$vendedor->nombre, $productos2->imagen);
         return view('productos.index', compact('productos', 'vendedor'));
     }
 

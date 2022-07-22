@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Vendedor;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class VendedorController extends Controller
 {
@@ -113,6 +114,10 @@ class VendedorController extends Controller
         $vendedor = Vendedor::findOrFail($id);
         $vendedor->delete();
         $productos = producto::where('idVendedor', $id)->delete();
+        //Eleminar foto del usuario
+        File::deleteDirectory(storage_path('app/public/perfil/'.$vendedor->nombre));
+        //Elemina las imagenesde sus productos
+        File::deleteDirectory(storage_path('app/public/productos/'.$vendedor->nombre));
         return redirect()->route('vendedores.index');
     }
 
