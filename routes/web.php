@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VendedorController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\Tienda;
+use App\Http\Controllers\TiendaController;
 use App\Models\Vendedor;
 
 /*
@@ -56,6 +58,12 @@ Route::group(['Middleware' => 'auth'], function() {
     Route::get('productos/actualizar/{id}', [ProductoController::class, 'actualizar'])->name('producto.actualizar');
     Route::get('producto/eleminar/{id}', [ProductoController::class, 'destroy'])->name('producto.destroy');
     Route::get('productos/detalles/{id}', [ProductoController::class, 'details'])->name('producto.details');
+
+    //Tienda
+    Route::get('TIenda', [TiendaController::class, 'index'])->name('StoreViews.index');
+    Route::get('TIenda/AboutUs', [TiendaController::class, 'aboutUS'])->name('StoreViews.aboutUs');
+    Route::get('TIenda/Productores', [TiendaController::class, 'productores'])->name('StoreViews.productores');
+    Route::get('TIenda/Productores/{id}', [TiendaController::class, 'contacto'])->name('StoreViews.contacto');
 
 });
 require __DIR__.'/auth.php';
