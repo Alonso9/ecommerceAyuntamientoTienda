@@ -61,7 +61,7 @@ class ProductoController extends Controller
         $extension = $request->file('imagen')->getClientOriginalExtension();
         $nombre = $request->input('nombreImg') . '.' . $extension;
         $productos2->imagen = $nombre;
-        $request->file('imagen')->storeAs('/public/productos/'.$vendedor->nombre, $nombre);
+        $request->file('imagen')->storeAs('/public/productos/'.$vendedor->id, $nombre);
 
 
         $productos2->save();

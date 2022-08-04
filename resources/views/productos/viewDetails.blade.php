@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="card">
-        <img src="{{ asset('storage/productos/'.$vendedor->nombre.'/'.$productos->imagen) }}" class="card-img-top" alt="...">
+        <img src="{{ asset('storage/productos/'.$vendedor->id.'/'.$productos->imagen) }}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Producto: {{$productos->nombre}}</h5>
           <p class="card-text">Descripcion: {{$productos->descripcion}}</p>

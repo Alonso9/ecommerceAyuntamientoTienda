@@ -8,19 +8,18 @@
     <title>Productores</title>
 </head>
 <body>
-    @foreach ($vendedores as $vendedor)
   @foreach ($productos as $producto)
   {{-- <img src="{{ asset('storage/productos/'.$vendedor->nombre.'/'.$producto->imagen) }}"> --}}
   {{-- <a href="{{route('StoreViews.contacto',$producto->idVendedor)}}">Contacto</a> --}}
   <div>
     <ul class="cards">
         <li>
-          <a href="{{route('StoreViews.contacto',$producto->idVendedor)}}" class="card">
-            <img src="{{ asset('storage/productos/'.$vendedor->nombre.'/'.$producto->imagen) }}" class="card__image" />
+          <a href="{{route('StoreViews.producto',$producto->id)}}" class="card">
+            <img src="{{ asset('storage/productos/'.$producto->nombre_id.'/'.$producto->imagen) }}" class="card__image" />
             <div class="card__overlay">
               <div class="card__header">
                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
-                <img class="card__thumb" src="{{ asset('storage/perfil/'.$vendedor->nombre.'/'.$vendedor->foto) }}" alt="" />
+                <img class="card__thumb" src="{{ asset('storage/perfil/'.$producto->nombre_id.'/'.$producto->foto_vendedor) }}" alt="" />
                 <div class="card__header-text">
                   <h3 class="card__title">Producto: {{$producto->nombre}}</h3>            
                   <span class="card__status">Precio: {{$producto->Precio}}</span>
@@ -34,7 +33,6 @@
         </li>    
       </ul>
   </div>
-@endforeach
 @endforeach
 
 </body>

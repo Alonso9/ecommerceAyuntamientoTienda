@@ -28,10 +28,13 @@ class TiendaController extends Controller
     }
 
     public function productores(){
-        $vendedores =  Vendedor::paginate();
-        $productos = producto::paginate();
+        $productos = DB::table('productos')
+                        ->leftJoin('vendedores', 'productos.IdVendedor', 'vendedores.id')
+                        ->select('productos.*', 'vendedores.id AS nombre_id','vendedores.nombre AS nombre_vendedor', 'vendedores.foto AS foto_vendedor')
+                        ->paginate();
 
-        return view('StoreViews.productores', compact('vendedores', 'productos'));
+        return view('StoreViews.productores', compact('productos'));
+        // return $productos;
     }
 
     
@@ -40,6 +43,15 @@ class TiendaController extends Controller
         $productos = producto::paginate();
 
         return view('StoreViews.contacto', compact('vendedor', 'productos'));
+    }
+
+    public function viewProducto($id){
+        $productos = producto::findOrFail($id);
+        $vendedor = Vendedor::findOrFail($productos->idVendedor);
+        
+    return view('StoreViews.producto', compact('productos', 'vendedor'));
+    // return $id;
+
     }
     
 }

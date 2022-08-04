@@ -56,7 +56,7 @@ class VendedorController extends Controller
 
         $extension = $request->file('imagen')->getClientOriginalExtension();
 
-        $request->file('imagen')->storeAs('/public/perfil/'.$vendedor->nombre, $vendedor->foto);
+        $request->file('imagen')->storeAs('/public/perfil/'.$vendedor->id, $vendedor->foto);
         // Storage::disk('local')->put($img);
 
         $vendedor->save();
