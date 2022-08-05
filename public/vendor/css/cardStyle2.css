@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	min-height: 100vh;
+	background: #ebecec;
+	font-family: 'Poppins', sans-serif;
+}
+.container{
+	max-width: 1000px;
+	display: flex;
+    flex-direction: column;
+	margin: 50px;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.box{
+	position: relative;
+    /* float: right; */
+	width: 300px;
+	height: 400px;
+	margin: 15px;
+	background: rgb(228, 212, 212);
+	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+}
+.box .imgBx{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.box .imgBx img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.5s;
+}
+/* Black Effect */
+.box:hover .imgBx img{ 
+	opacity: 0;
+}
+.box .content{
+	position: absolute;
+	bottom: 20px;
+	left: 10%;
+	width: 80%;
+	height: 60px;
+	background: #fff;
+	transition: 0.5s;
+	overflow: hidden;
+	padding: 15px;
+	box-sizing: border-box;
+}
+/* White box effect */
+.box:hover .content{
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+}
+.producto,.box,.content{
+    border-radius: 10px;
+}
+.box .content h3{
+	margin: 0;
+    border-radius: 30px;
+	padding: 0;
+	font-size: 17px;
+}
+.box .content p{
+	margin: 10px 0 0 ;
+	padding: 0;
+	opacity: 0;
+	line-height: 1.2em;
+	transition: 0.5s;
+	text-align: justify;
+}
+/* Text effect transition */
+.box:hover .content p{
+	opacity: 1;
+	transition-delay: 0.4s;
+}
+.card__thumb {
+    flex-shrink: 0;
+    margin-top: 0px;
+    width: 35px;
+    height: 35px;    
+    border-radius: 50%;      
+  }
+  a{
+    text-decoration: none;
+    color: #000;
+}
+.onb-button {
+    display: inline-block;
+    padding: 1em .8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+  }
+.onb-product-details-box--add-to-cart-button {
+    flex: 2 1 auto;
+    width: 90%;
+    margin-top: 100px;
+    margin-right: 100px;
+    margin-bottom: 0;
+    /* margin: 0.5em; */
+    border-width: 0;
+  }
+  .onb-button__primary {
+    background-color: #53a7c0;
+    color: #fff;
+    font-weight: 600;
+  }
+
+/* 
+@media only screen and (max-width: 860px) {
+    body {
+      background-color: lightblue;
+    }
+    .container{
+        margin: 20px;
+    }
+  }
+   */
