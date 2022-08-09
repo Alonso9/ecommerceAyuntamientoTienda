@@ -31,7 +31,7 @@
                         <img class="brandLogo" src="{{asset('vendor/img/logo.png')}}" alt="">
                     <ul class="nav-links">
                         <li><a class="linkText" href="{{route('StoreViews.aboutUs')}}">Quienes Somos</a></li>
-                        <li><a class="linkText" href="{{route('StoreViews.productores')}}">Productores</a></li>
+                        <li><a class="linkText" href="{{route('StoreViews.productores')}}">Productos</a></li>
                         <li><a class="linkText" href="#">Eventos</a></li>
                         <li><a class="linkText" href="{{asset('login')}}">Cuenta</a></li>
                         <li>

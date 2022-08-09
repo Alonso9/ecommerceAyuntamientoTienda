@@ -90,7 +90,7 @@
                href="{{route('StoreViews.contacto',$vendedor->id)}}">Comprar</a> --}}
             
                 {{-- <button class="onb-product-details-box--add-to-cart-button onb-button onb-button__primary" href=""><a href="">Comprar</a></button> --}}
-                <a class="onb-product-details-box--add-to-cart-button onb-button onb-button__primary" href="{{route('StoreViews.contacto',$vendedor->id)}}">Comprar</a>
+                <a class="onb-product-details-box--add-to-cart-button onb-button onb-button__primary" href="{{route('StoreViews.contacto',$vendedor->id)}}">Contacto</a>
             
           </div>
           <div class="onb-product-details-box--description">
