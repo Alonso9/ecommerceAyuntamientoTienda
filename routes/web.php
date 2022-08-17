@@ -62,9 +62,10 @@ Route::group(['Middleware' => 'auth'], function() {
     //Tienda
     Route::get('TIenda', [TiendaController::class, 'index'])->name('StoreViews.index');
     Route::get('TIenda/AboutUs', [TiendaController::class, 'aboutUS'])->name('StoreViews.aboutUs');
-    Route::get('TIenda/Productores', [TiendaController::class, 'productores'])->name('StoreViews.productores');
+    Route::get('TIenda/Productos', [TiendaController::class, 'productores'])->name('StoreViews.productores');
     Route::get('TIenda/Productores/producto/{id}', [TiendaController::class, 'viewProducto'])->name('StoreViews.producto');
     Route::get('TIenda/Productores/contacto/{id}', [TiendaController::class, 'contacto'])->name('StoreViews.contacto');
+    Route::get('TIenda/puntos', [TiendaController::class, 'mapa'])->name('StoreViews.mapa');
 
 });
 require __DIR__.'/auth.php';

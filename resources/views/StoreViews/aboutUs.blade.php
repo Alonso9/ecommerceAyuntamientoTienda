@@ -35,11 +35,7 @@ exclusiva de su marca</b></pre>
                 </div>
             </div>
         </div>
+        @include('layouts.footer')
     </main>
-    <footer>
-        <div class="footerContainer">
-
-        </div>
-    </footer>
 </body>
 </html>

@@ -53,5 +53,13 @@ class TiendaController extends Controller
     // return $id;
 
     }
+
+    public function mapa(){
+        return view('StoreViews.mapa');
+    }
+
+    public function postFacebook(){
+        return "hi";
+    }
     
 }

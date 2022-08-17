@@ -3,21 +3,21 @@
 body{
 	margin: 0;
 	padding: 0;
-	display: flex;
+	/* display: flex; */
 	justify-content: center;
 	/* align-items: center; */
 	min-height: 100vh;
-	background: #ebecec;
+	background: #EBEBEB;
 	font-family: 'Poppins', sans-serif;
 }
-.container{
+.container {
 	max-width: 1000px;
 	display: flex;
-    flex-direction: column;
 	margin: 50px;
 	flex-wrap: wrap;
 	justify-content: space-around;
-}
+  }
+  
 .box{
 	position: relative;
     /* float: right; */
@@ -43,6 +43,11 @@ body{
 	object-fit: cover;
 	transition: 0.5s;
 }
+.producto{
+	width: 95%;
+	height: 95%;
+}
+
 /* Black Effect */
 .box:hover .imgBx img{ 
 	opacity: 0;
@@ -58,6 +63,7 @@ body{
 	overflow: hidden;
 	padding: 15px;
 	box-sizing: border-box;
+	/* padding: 10px; */
 }
 /* White box effect */
 .box:hover .content{
@@ -77,6 +83,7 @@ body{
 }
 .box .content p{
 	margin: 10px 0 0 ;
+	/* margin-left: 100px; */
 	padding: 0;
 	opacity: 0;
 	line-height: 1.2em;
@@ -108,17 +115,23 @@ body{
   }
 .onb-product-details-box--add-to-cart-button {
     flex: 2 1 auto;
-    width: 90%;
-    margin-top: 100px;
-    margin-right: 100px;
-    margin-bottom: 0;
+    width: 100%;
+    margin-top: 70px;
+    margin-right: 50px;
+    margin-bottom: 0px;
     /* margin: 0.5em; */
     border-width: 0;
+	border-radius: 10px;
   }
   .onb-button__primary {
-    background-color: #53a7c0;
+    background-color: #AD4145;
     color: #fff;
     font-weight: 600;
+  }
+
+  .name-product{
+	font-size: 20px;
+	margin-top: 10px;
   }
 
 /* 
