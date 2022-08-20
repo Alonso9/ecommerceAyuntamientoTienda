@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Esto es un ejemplo</title>
+    <title>Consume local | Manzanillo</title>
+    <link rel="icon" href="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}">
     <link rel="stylesheet" href="{{asset('vendor/css/inicioStyle.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -16,13 +17,13 @@
     <div id="nav">
         <div id="navimgcont">
             <img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt="">
-            <img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt="">
+            <img src="{{asset('vendor/img/imagenes/logo_mzo.png')}}" alt="">
         </div>
 
         <div id="navbtncont">
             <div class="navbtn"><a class="linkText" href="{{route('StoreViews.aboutUs')}}">Quienes Somos</a></div>
             <div class="navbtn"><a class="linkText" href="{{route('StoreViews.productores')}}">Productores</a></div>
-            <div class="navbtn">Eventos</div>
+            <div class="navbtn"><a class="linkText" href="{{route('StoreViews.eventos')}}">Eventos</a></div>
             <div class="navbtn"><a class="linkText" href="{{route('StoreViews.mapa')}}">Puntos de Venta</a></div>
             <div class="navbtn"><a class="linkText" href="{{asset('login')}}">Cuenta</a></div>
             <i class="fa-solid fa-magnifying-glass" id="nav-search"></i>
@@ -33,102 +34,30 @@
     <div id="container-slider" class="container-slider">
 
         <div class="elements" id="elements">
-
+            @foreach ($productos as $producto)
             <!-- un solo elemento -->
             <div class="slider">
                 <!-- Información del producto -->
                 <div class="slider-info">
                     <img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt="">
-        
                     <div class="slin-txt">
-                        <p class="slin-title">Mezcal</p>
-                        <p class="slin-prop">de la Rosa</p>
-                        <p class="slin-prop">de la San Jose</p>
-                        <p class="slin-prop">de Lumber</p>
-                        <p class="slin-desc">Producido en la zona alta del municipio de Manzanillo</p>
+                        <p class="slin-title">{{$producto->nombre}}</p>
+                        <p class="slin-desc">{{$producto->descripcion}}</p>
                     </div>
         
-                    <div class="slin-btncomprar">Comprar</div>
+                    <a href="{{route('StoreViews.producto',$producto->id)}}" target="blank">
+                        <div class="slin-btncomprar">Ver Producto</div>
+                    </a>
                 </div>
         
                 <!-- Imagen -->
                 <div class="slider-img">
-                    <img src="{{asset('vendor/img/imagenes/slider1.jpg')}}" alt="">
-                    <div class="slin-btnpntventa"><a href="{{route('StoreViews.mapa')}}">Puntos de Venta</a></div>
+                    <img class="imgproducto" src="{{ asset('storage/productos/'.$producto->nombre_id.'/'.$producto->imagen) }}" alt=""><br>
+                    <div class="slin-btnpntventa"><a class="link" href="{{route('StoreViews.mapa')}}">Puntos de Venta</a></div>
                 </div>
             </div>
-
-            <!-- un solo elemento -->
-            <div class="slider">
-                <!-- Información del producto -->
-                <div class="slider-info">
-                    <img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt="">
-        
-                    <div class="slin-txt">
-                        <p class="slin-title">Tlali</p>
-                        <p class="slin-prop">de la Rosa</p>
-                        <p class="slin-prop">de la San Jose</p>
-                        <p class="slin-prop">de Lumber</p>
-                        <p class="slin-desc">Producido en la zona alta del municipio de Manzanillo</p>
-                    </div>
-        
-                    <div class="slin-btncomprar">Comprar</div>
-                </div>
-        
-                <!-- Imagen -->
-                <div class="slider-img">
-                    <img src="{{asset('vendor/img/imagenes/slider2.jpeg')}}" alt="">
-                    <div class="slin-btnpntventa">Puntos de venta</div>
-                </div>
-            </div>
-
-            <!-- un solo elemento -->
-            <div class="slider">
-                <!-- Información del producto -->
-                <div class="slider-info">
-                    <img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt="">
-        
-                    <div class="slin-txt">
-                        <p class="slin-title">Cafe</p>
-                        <p class="slin-prop">de la Rosa</p>
-                        <p class="slin-prop">de la San Jose</p>
-                        <p class="slin-prop">de Lumber</p>
-                        <p class="slin-desc">Producido en la zona alta del municipio de Manzanillo</p>
-                    </div>
-        
-                    <div class="slin-btncomprar">Comprar</div>
-                </div>
-        
-                <!-- Imagen -->
-                <div class="slider-img">
-                    <img src="{{asset('vendor/img/imagenes/slider3.jpg')}}" alt="">
-                    <div class="slin-btnpntventa">Puntos de venta</div>
-                </div>
-            </div>
-
-            <!-- un solo elemento -->
-            <div class="slider">
-                <!-- Información del producto -->
-                <div class="slider-info">
-                    <img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt="">
-        
-                    <div class="slin-txt">
-                        <p class="slin-title">Sal</p>
-                        <p class="slin-prop">de la Rosa</p>
-                        <p class="slin-prop">de la San Jose</p>
-                        <p class="slin-prop">de Lumber</p>
-                        <p class="slin-desc">Producido en la zona alta del municipio de Manzanillo</p>
-                    </div>
-        
-                    <div class="slin-btncomprar">Comprar</div>
-                </div>
-        
-                <!-- Imagen -->
-                <div class="slider-img">
-                    <img src="{{asset('vendor/img/imagenes/slider4.jpg')}}" alt="">
-                    <div class="slin-btnpntventa">Puntos de venta</div>
-                </div>
-            </div>
+            @endforeach
+            
 
         </div>
 
@@ -140,7 +69,7 @@
     <!-- quienes somos -->
     <!-- <div id="banner">
         <img id="banner-logo" src="images/consumelocal_logo.png" alt="">
-        <img id="banner-img" src="{{asset('vendor/img/imagenes/sal.jpg')}}" alt="">
+        {{-- <img id="banner-img" src="{{asset('vendor/img/imagenes/sal.jpg')}}" alt=""> --}}
         <img id="banner-textura" src="images/textura.png" alt="">
         <span id="banner-txtq" >Quienes</span>
         <span id="banner-txts">somos</span>
@@ -178,56 +107,19 @@
     <!-- productores -->
     <div id="productores">
         <div id="pr-title">Productores</div>
-
         <div id="pr-container">
+            @foreach($datos['published_posts']['data'] as $dato) 
+            <a href="{{$dato['attachments']['data'][0]['url']}}" target="blank">   
             <div class="pr-element">
-                <p>Sal real de colima</p>
-                <img src="{{asset('vendor/img/imagenes/sal.jpg')}}" alt="">
-                <div class="pr-contacto">Contacto</div>
+                {{-- <p>Sal real de colima</p> --}}
+                <img class="card-img-top" src="{{$dato['full_picture']}}" alt="card image cap">
+                {{-- <div class="pr-contacto"><a href="{{$dato['attachments']['data'][0]['url']}}" class="btn btn-primary">Ver Post</a></div> --}}
                 <div class="pr-desc">
-                    <p>Descripción Lorem ipsum dolor sit amet consectetur</p>
+                    <p class="message">{{$dato['message']}}.....</p>
                 </div>
             </div>
-            <div class="pr-element">
-                <p>Sal real de colima</p>
-                <img src="{{asset('vendor/img/imagenes/sal.jpg')}}" alt="">
-                <div class="pr-contacto">Contacto</div>
-                <div class="pr-desc">
-                    <p>Descripción</p>
-                </div>
-            </div>
-            <div class="pr-element">
-                <p>Sal real de colima</p>
-                <img src="{{asset('vendor/img/imagenes/sal.jpg')}}" alt="">
-                <div class="pr-contacto">Contacto</div>
-                <div class="pr-desc">
-                    <p>Descripción</p>
-                </div>
-            </div>
-            <div class="pr-element">
-                <p>Sal real de colima</p>
-                <img src="{{asset('vendor/img/imagenes/sal.jpg')}}" alt="">
-                <div class="pr-contacto">Contacto</div>
-                <div class="pr-desc">
-                    <p>Descripción</p>
-                </div>
-            </div>
-            <div class="pr-element">
-                <p>Sal real de colima</p>
-                <img src="{{asset('vendor/img/imagenes/sal.jpg')}}" alt="">
-                <div class="pr-contacto">Contacto</div>
-                <div class="pr-desc">
-                    <p>Descripción</p>
-                </div>
-            </div>
-            <div class="pr-element">
-                <p>Sal real de colima</p>
-                <img src="{{asset('vendor/img/imagenes/sal.jpg')}}" alt="">
-                <div class="pr-contacto">Contacto</div>
-                <div class="pr-desc">
-                    <p>Descripción</p>
-                </div>
-            </div>
+            </a>
+            @endforeach
         </div>
     </div>
 

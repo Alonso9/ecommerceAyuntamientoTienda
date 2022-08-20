@@ -45,7 +45,7 @@
                                     <x-input class="block mt-1 w-full" type="text" name="descripcion" required></x-input>
                                 </div>
                                 <div>
-                                    <x-label :value="__('Imagen')"></x-label>
+                                    <x-label :value="__('Imagen o Logo')"></x-label>
                                     <x-input class="block mt-1 w-full" type="file" name="imagen" ></x-input>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                         
                         <div class="flex items-center justify-end mt-4">
                             <x-button class="ml-3">
-                                Actualizar
+                                Agregar
                             </x-button>
                         </div>
                     </form>

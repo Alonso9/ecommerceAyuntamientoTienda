@@ -112,6 +112,7 @@
     border-radius: 7px;
     text-transform: uppercase;
     cursor: pointer;
+    /* text-decoration: none; */
 }
 
 .slider-img{
@@ -137,7 +138,11 @@
     padding: 7px;
     bottom: 2vw;
     right: 2vw;
-    cursor: pointer;
+    cursor: pointer;;
+}
+.link{
+    text-decoration: none;
+    color: #862628;
 }
 
 /* nuevo slider */
@@ -301,7 +306,20 @@
 /* Contenido */
 
 #productores{
-    margin: 100px 4vw;    
+    margin: 100px 4vw;
+    display: flex;
+    flex-wrap: wrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+.message{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.imgproducto{
+    height: 100%;
+    width: 100%;
 }
 
 #pr-title{

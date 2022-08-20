@@ -24,6 +24,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', [TiendaController::class, 'postFacebook'])->name('welcome');
+
 
 /* Breeze rutas */
 
@@ -59,13 +61,16 @@ Route::group(['Middleware' => 'auth'], function() {
     Route::get('producto/eleminar/{id}', [ProductoController::class, 'destroy'])->name('producto.destroy');
     Route::get('productos/detalles/{id}', [ProductoController::class, 'details'])->name('producto.details');
 
-    //Tienda
-    Route::get('TIenda', [TiendaController::class, 'index'])->name('StoreViews.index');
-    Route::get('TIenda/AboutUs', [TiendaController::class, 'aboutUS'])->name('StoreViews.aboutUs');
-    Route::get('TIenda/Productos', [TiendaController::class, 'productores'])->name('StoreViews.productores');
-    Route::get('TIenda/Productores/producto/{id}', [TiendaController::class, 'viewProducto'])->name('StoreViews.producto');
-    Route::get('TIenda/Productores/contacto/{id}', [TiendaController::class, 'contacto'])->name('StoreViews.contacto');
-    Route::get('TIenda/puntos', [TiendaController::class, 'mapa'])->name('StoreViews.mapa');
+    
 
 });
 require __DIR__.'/auth.php';
+
+//Tienda
+Route::get('TIenda', [TiendaController::class, 'index'])->name('StoreViews.index');
+Route::get('TIenda/AboutUs', [TiendaController::class, 'aboutUS'])->name('StoreViews.aboutUs');
+Route::get('TIenda/Productos', [TiendaController::class, 'productores'])->name('StoreViews.productores');
+Route::get('TIenda/Productores/producto/{id}', [TiendaController::class, 'viewProducto'])->name('StoreViews.producto');
+Route::get('TIenda/Productores/contacto/{id}', [TiendaController::class, 'contacto'])->name('StoreViews.contacto');
+Route::get('TIenda/Puntos', [TiendaController::class, 'mapa'])->name('StoreViews.mapa');
+Route::get('TIenda/Eventos', [TiendaController::class, 'postFacebook'])->name('StoreViews.eventos');
