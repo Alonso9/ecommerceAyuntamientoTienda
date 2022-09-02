@@ -19,6 +19,9 @@
                     <x-nav-link class="text-blue-500" :href="route('vendedores.index')" :active="request()->routeIs('dashboard')">
                         {{ __('Vendedores') }}
                     </x-nav-link>
+                    <x-nav-link class="text-blue-500" :href="route('eventos.index')" :active="request()->routeIs('dashboard')">
+                        {{ __('Eventos') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -92,6 +95,8 @@
 
                     <x-responsive-nav-link :href="route('vendedores.index')">
                         {{ __('Vendedores') }}
+                    </x-responsive-nav-link><x-responsive-nav-link :href="route('eventos.index')">
+                        {{ __('Eventos') }}
                     </x-responsive-nav-link>
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">

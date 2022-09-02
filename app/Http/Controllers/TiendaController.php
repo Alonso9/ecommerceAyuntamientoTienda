@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\producto;
 use Illuminate\Http\Request;
 use App\Models\Vendedor;
+use App\Models\Eventos;
+use DateTime;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -71,6 +74,20 @@ class TiendaController extends Controller
         // return $datos;
         // dd($datos);
         return view('welcome', compact('datos', 'productos'));
+    }
+
+    public function eventos(){
+        date_default_timezone_set('america/mexico_city');
+        $fecha = date("Y-m-d");
+        $hora = date("h:i:sa");
+
+        $eventos = DB::table('eventos')
+                      ->select('eventos.*')
+                      ->where('FechaEvento', '>=', $fecha, 'and', 'hora', '>=', $hora)
+                      ->orderBy('FechaEvento','ASC')
+                      ->paginate(20);
+        // return $hora;
+        return view('StoreViews.eventos', compact('eventos'));
     }
     
 }

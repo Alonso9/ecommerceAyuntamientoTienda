@@ -8,6 +8,7 @@
     <title>Nosotros</title>
 </head>
 <body>
+    @include('layouts.header')
     <main class="container">
         <div class="head">
             <img class="brandLogo" src="{{asset('vendor/img/somos.png')}}" alt="">

@@ -9,15 +9,14 @@
     <link rel="icon" href="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}">
     <link rel="stylesheet" href="{{asset('vendor/css/inicioStyle.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 <body>
 
     <!-- Barra de navegación -->
     <div id="nav">
         <div id="navimgcont">
-            <img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt="">
-            <img src="{{asset('vendor/img/imagenes/logo_mzo.png')}}" alt="">
+            <a href="{{route('welcome')}}"><img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt=""></a>
+            <a href="https://manzanillo.gob.mx/" target="blank"><img src="{{asset('vendor/img/logo_mzo.png')}}" alt=""></a>
         </div>
 
         <div id="navbtncont">
@@ -106,7 +105,7 @@
 
     <!-- productores -->
     <div id="productores">
-        <div id="pr-title">Productores</div>
+        <div id="pr-title">Noticias</div>
         <div id="pr-container">
             @foreach($datos['published_posts']['data'] as $dato) 
             <a href="{{$dato['attachments']['data'][0]['url']}}" target="blank">   
@@ -124,43 +123,57 @@
     </div>
 
     <!-- Eventos -->
-    <div id="eventos">
-        <p>Eventos especiales</p>
-        <div id="ev-slider">
-
-            <div class="ev-el">
-                <img src="{{asset('vendor/img/imagenes/slider3.jpg')}}" alt="">
-                <p>Festival cultural rural</p>
-                <p>Canoas 2022</p>
-            </div>
-            <div class="ev-el">
-                <img src="{{asset('vendor/img/imagenes/slider3.jpg')}}" alt="">
-                <p>Festival cultural rural</p>
-                <p>Canoas 2022</p>
-            </div>
-            <div class="ev-el">
-                <img src="{{asset('vendor/img/imagenes/slider3.jpg')}}" alt="">
-                <p>Festival cultural rural</p>
-                <p>Canoas 2022</p>
-            </div>
-            <div class="ev-el">
-                <img src="{{asset('vendor/img/imagenes/slider3.jpg')}}" alt="">
-                <p>Festival cultural rural</p>
-                <p>Canoas 2022</p>
-            </div>
-    
+    {{-- <div class="carousel">
+        <p class="carousel-title">Eventos especiales</p>
+        <div class="carouselbox">
+            <!-- data generated width JS -->
         </div>
-    </div>
+
+        <a class="sleft sbutton" onclick="scrollleft()"><i class="fa-solid fa-angle-left"></i></a>
+        <a class="sright sbutton" onclick="scrollRight()"><i class="fa-solid fa-angle-right"></i></a>
+    </div> --}}
 
     <!-- Footer -->
-    <footer id="footer">
-        <p>Footer en construcción 🤓</p>
+    <div id="footer">
 
-    </footer>
+        <div id="footer-cont">
+            <div id="footer-img">
+                <img src="{{asset('vendor/img/logo_mzo.png')}}" alt="">
+                <img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt="">
+            </div>
+    
+            <div id="footer-ar">
+                <p class="footer-titles">Accesos rápidos</p>
+                <div class="line1px"></div>
+                <ul id="ar-links">
+                    <li><a href="#">Quienes somos</a></li>
+                    <li><a href="#">Productores</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Puntos de venta</a></li>
+                    <li><a href="#">Cuenta</a></li>
+                </ul>
+    
+            </div>
+    
+            <div id="footer-contacto">
+                <p class="footer-titles">Contacto</p>
+                <div class="line1px"></div>
+                <div id="cont-info">
+                    <P><i class="fa-solid fa-location-dot"></i>Direccion, Manzanillo, Colima, México</P>
+                    <p><i class="fa-solid fa-envelope"></i>correo@dominio.com</p>
+                    <p><i class="fa-solid fa-phone"></i>314....</p>
+                </div>
+            </div>
 
+        </div>
 
+        <div id="footcopy">
+            <p>© H. Ayuntamiento de Manzanillo, Colima</p>
+        </div>
 
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js"></script>
+    <script src="index.js"></script>
     <script src="{{asset('vendor/js/slider.js')}}"></script>
-
 </body>
 </html>

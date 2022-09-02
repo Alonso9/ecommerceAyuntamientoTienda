@@ -5,9 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VendedorController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\EventoController;
 use App\Http\Controllers\Tienda;
 use App\Http\Controllers\TiendaController;
+use App\Models\Eventos;
 use App\Models\Vendedor;
+use Psy\Readline\Hoa\EventSource;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +23,9 @@ use App\Models\Vendedor;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', [TiendaController::class, 'postFacebook'])->name('welcome');
 
@@ -61,7 +64,16 @@ Route::group(['Middleware' => 'auth'], function() {
     Route::get('producto/eleminar/{id}', [ProductoController::class, 'destroy'])->name('producto.destroy');
     Route::get('productos/detalles/{id}', [ProductoController::class, 'details'])->name('producto.details');
 
-    
+    //Eventos
+    Route::get('Eventos', [EventoController::class, 'index'])->name('eventos.index');
+    Route::post('Eventos/buscar/', [EventoController::class, 'buscar'])->name('eventos.buscar');
+    Route::get('Evento/Crear', [EventoController::class, 'create'])->name('eventos.create');
+    Route::post('Evento/Insertar', [EventoController::class, 'store'])->name('eventos.store');
+    Route::get('Evnetos/eleminar/{id}', [EventoController::class, 'destroy'])->name('eventos.destroy');
+    Route::get('Eventos/detalles/{id}', [EventoController::class, 'details'])->name('eventos.details');
+    Route::get('Eventos/editar/{id}', [EventoController::class, 'edit'])->name('eventos.edit');
+    Route::get('Eventos/actualizar/{id}', [EventoController::class, 'update'])->name('eventos.update');
+
 
 });
 require __DIR__.'/auth.php';
@@ -73,4 +85,4 @@ Route::get('TIenda/Productos', [TiendaController::class, 'productores'])->name('
 Route::get('TIenda/Productores/producto/{id}', [TiendaController::class, 'viewProducto'])->name('StoreViews.producto');
 Route::get('TIenda/Productores/contacto/{id}', [TiendaController::class, 'contacto'])->name('StoreViews.contacto');
 Route::get('TIenda/Puntos', [TiendaController::class, 'mapa'])->name('StoreViews.mapa');
-Route::get('TIenda/Eventos', [TiendaController::class, 'postFacebook'])->name('StoreViews.eventos');
+Route::get('TIenda/Eventos', [TiendaController::class, 'eventos'])->name('StoreViews.eventos');

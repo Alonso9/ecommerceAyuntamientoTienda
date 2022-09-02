@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: montserrat, sans-serif;
+    /* font-family: montserrat, sans-serif; */
+    font-family: 'Poppins', sans-serif;
 }
 
 /* #header */
@@ -59,25 +60,103 @@
     color: #fff;
 }
 
+/********** Card *******************/
+  .title{
+    margin: auto;
+    text-align: center;
+    margin-bottom: -15px;
+  }
+  .mainContainer{
+    max-width: 1000px;
+	display: flex;
+	margin: 50px;
+	flex-wrap: wrap;
+	justify-content: space-around;
+    position: relative;
+  }
+  .container {
+    position : relative;
+    width : 1100px;
+    display : flex;
+    align-items : center;
+    justify-content : space-around;
+    flex-wrap: wrap;
+    padding : 30px;
+    padding-top: 50px;
+    margin-bottom: 50px; 
+    flex-wrap: wrap;
+  }
+  
+  .container .card {
+    position: relative;
+    max-width : 300px;
+    height : 215px;  
+    background-color : #fff;
+    margin : 30px 10px;
+    padding : 30px 15px;
+    margin-bottom: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display : flex;
+    flex-direction : column;
+    box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+    transition : 0.3s ease-in-out;
+    border-radius : 15px;
+    width: 100%;
+    
+  }
+  .container .card:hover {
+    height : 320px;
+    display: block;
+    overflow: auto;    
+  }
+  
+  
+  .container .card .image {
+    position : relative;
+    width : 260px;
+    height : 260px;
+    
+    top : -40%;
+    left: 8px;
+    box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+    z-index : 1;
+  }
+  
+  .container .card .image img {
+    max-width : 100%;
+    border-radius : 15px;
+  }
+  
+  .container .card .content {
+    position : relative;
+    top : -140px;
+    padding : 10px 15px;
+    color : #111;
+    text-align : center;
+    
+    visibility : hidden;
+    opacity : 0;
+    transition : 0.3s ease-in-out;
+    word-wrap: break-word;
+    /* overflow: hidden; */
+      
+  }
+  
+  .container .card:hover .content {
+     margin-top : 30px;
+     visibility : visible;
+     opacity : 1;
+     transition-delay: 0.2s;
+    
+  }
 
-/* Start: Google Maps Responsive */
-.map-responsive {
-    overflow:hidden;
-    padding-top: 100px;
-    padding-right: 40px;
-    padding-bottom:400px; /*Reduce este valor si el mapa fuera muy alto, por ejemplo 250px, puedes usar porcentajes, 50%*/
-    position:relative;
-    height:0;
-}
+  .imgEvent{
+    width: 100%;
+    height: 100%;
+  }
 
-.map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
-/* End: Google Maps Responsive */
+
 
 /* Footer */
 #footer{

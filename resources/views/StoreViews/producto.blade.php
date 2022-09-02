@@ -109,7 +109,7 @@
         <section class="onb-product-view--social-box onb-social-box">
           <!-- how to seperate components best? -->
           <a class="onb-social-box--item onb-button onb-button__secondary FB"
-             href="#"><i class="fab fa-facebook" ></i>facebook</a>
+             href="http://www.facebook.com/pages/{{$vendedor->facebook}}" target="blank"><i class="fab fa-facebook" ></i>facebook</a>
           <a class="onb-social-box--item onb-button onb-button__secondary WA"
              href="https://wa.me/+52{{$vendedor->whatsapp}}?text=Me%20interesa%20el producto {{$productos->nombre}}%20que%20vendes"><i class="fab fa-whatsapp "></i>WhatsApp</a>
           <a class="onb-social-box--item onb-button onb-button__secondary EM"
@@ -121,7 +121,7 @@
     </article>
   </main>
   <script>
-    alert("Para comprar producto puede comunicarse con el vendedor por sus medios de contacto")
+    // alert("Para comprar producto puede comunicarse con el vendedor por sus medios de contacto")
   </script>
 </body>
 </html>

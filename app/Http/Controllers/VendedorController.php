@@ -55,11 +55,10 @@ class VendedorController extends Controller
         $vendedor->foto = $request->file('imagen')->getClientOriginalName();
 
         $extension = $request->file('imagen')->getClientOriginalExtension();
+        $vendedor->save();
 
         $request->file('imagen')->storeAs('/public/perfil/'.$vendedor->id, $vendedor->foto);
-        // Storage::disk('local')->put($img);
 
-        $vendedor->save();
 
         return redirect()->route('vendedores.index');
     }

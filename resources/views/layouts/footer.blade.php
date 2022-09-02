@@ -1,37 +1,41 @@
 <footer>
-    <div class="footer-left">
-        <img src="" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, dolorem. Ullam, illo amet quidem recusandae velit quaerat quisquam vitae voluptate quae, unde corporis tempore sed labore repellendus nam, in repellat!</p>
-        <div class="socials">
-            <a href=""><i></i></a>
-            <a href=""><i></i></a>
-            <a href=""><i></i></a>
-            <a href=""><i></i></a>
-            <a href=""><i></i></a>
+    <!-- Footer -->
+    <div id="footer">
+
+        <div id="footer-cont">
+            <div id="footer-img">
+                <a href="{{route('welcome')}}"><img src="{{asset('vendor/img/imagenes/consumelocal_logo.png')}}" alt=""></a>
+                <a href="https://manzanillo.gob.mx/" target="blank"><img src="{{asset('vendor/img/logo_mzo.png')}}" alt=""></a>
+            </div>
+    
+            <div id="footer-ar">
+                <p class="footer-titles">Accesos rápidos</p>
+                <div class="line1px"></div>
+                <ul id="ar-links">
+                    <li><a class="linkText" href="{{route('StoreViews.aboutUs')}}">Quienes Somos</a></li>
+                    <li><a class="linkText" href="{{route('StoreViews.productores')}}">Productores</a></li>
+                    <li><a class="linkText" href="{{route('StoreViews.eventos')}}">Eventos</a></li>
+                    <li><a class="linkText" href="{{route('StoreViews.mapa')}}">Puntos de Venta</a></li>
+                    <li><a class="linkText" href="{{asset('login')}}">Cuenta</a></li>
+                </ul>
+    
+            </div>
+    
+            <div id="footer-contacto">
+                <p class="footer-titles">Contacto</p>
+                <div class="line1px"></div>
+                <div id="cont-info">
+                    <P><i class="fa-solid fa-location-dot"></i>Direccion,  C. Juárez #100, Col. Centro, CP 28200
+                        Manzanillo, Colima, México. </P>
+                    <p><i class="fa-solid fa-envelope"></i>correo@dominio.com</p>
+                    <p><i class="fa-solid fa-phone"></i>314....</p>
+                </div>
+            </div>
+
         </div>
-    </div>
-    <div class="footer-right">
-        <li>
-            <h2>Secciones</h2>
-            <ul class="box">
-                <li><a href="">Productos</a></li>
-                <li><a href="">Productores</a></li>
-                <li><a href="">Nosotros</a></li>
-                <li><a href="">Puntos de Venta</a></li>
-            </ul>
-        </li>
-        <li class="contacto">
-            <h2>Telefonos</h2>
-            <ul class="box">
-                <li><a href="">Telefono1</a></li>
-                <li><a href="">Telefono2</a></li>
-                <li><a href="">Telefono3</a></li>
-                <li><a href="">Telefono4</a></li>
-            </ul>
-        </li>
-    </div>
-    <div class="footer-bottom">
-        <p>Derechos Reservados</p>
-    </div>
+
+        <div id="footcopy">
+            <p>© H. Ayuntamiento de Manzanillo, Colima</p>
+        </div>
     
 </footer>
