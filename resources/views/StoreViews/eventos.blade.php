@@ -14,6 +14,9 @@
     
     <div class="mainContainer">
         <div class = container>
+          @if(count($eventos)<=0)
+          <h1 class="title">No hay eventos proximos :D</h1><br><br>
+          @else
             @foreach ($eventos as $evento)
             <div class = card>
               <div class = image>
@@ -27,6 +30,7 @@
               </div>
             </div>
             @endforeach
+            @endif
         </div>
     </div> 
       

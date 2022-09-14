@@ -11,7 +11,7 @@
             <div class="navbtn"><a class="linkText" href="{{route('StoreViews.productores')}}">Productores</a></div>
             <div class="navbtn"><a class="linkText" href="{{route('StoreViews.eventos')}}">Eventos</a></div>
             <div class="navbtn"><a class="linkText" href="{{route('StoreViews.mapa')}}">Puntos de Venta</a></div>
-            <div class="navbtn"><a class="linkText" href="{{asset('login')}}">Cuenta</a></div>
+            <div class="navbtn"><a class="linkText" target="blank" href="{{asset('login')}}">Cuenta</a></div>
             <i class="fa-solid fa-magnifying-glass" id="nav-search"></i>
         </div>
     </div>
